@@ -20,7 +20,7 @@ services:
       - "9009:9000"
 
   medusa-postgres:
-    image: docker pull postgres:13.9-alpine
+    image: postgres:13.9-alpine
     restart: always
     environment:
       POSTGRES_USER: postgres
