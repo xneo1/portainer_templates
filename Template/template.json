@@ -4676,7 +4676,7 @@
       "type": 3
     },
     {
-      "categories": ["Development", "Low Code" , "No code"],
+      "categories": ["Development", "Low-code" , "No-code"],
       "description": "Tooljet is an Open-source low-code application development platform for building and deploying business applications.", 
       "logo": "https://uploads-ssl.webflow.com/6266634263b9179f76b2236e/63aaa161e3b3be42ec50eb6f_Logomark.svg",
       "name": "tooljet",
