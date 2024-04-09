@@ -4099,7 +4099,7 @@
       "name": "NetAlertX",
       "platform": "linux",
       "repository": {
-	    "stackfile": "Template/Stack/NetAlertX.yml",
+	    "stackfile": "Template/Stack/netalertx.yml",
 	    "url": "https://github.com/xneo1/portainer_templates"
       },  
       "title": "NetAlertX",
