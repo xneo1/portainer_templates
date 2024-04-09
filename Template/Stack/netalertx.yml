@@ -1,20 +1,15 @@
 version: "3"
 services:
   netalertx:
-    privileged: true
-    build:
-      dockerfile: Dockerfile
-      context: .
-      cache_from:
-        - type=registry,ref=docker.io/jokob-sk/netalertx:buildcache
     container_name: netalertx
-    network_mode: host
-    # restart: unless-stopped
+    # use the below line if you want to test the latest dev image
+    # image: "jokobsk/netalertx-dev:latest" 
+    image: "jokobsk/netalertx:latest"      
+    network_mode: "host"        
+    restart: unless-stopped
     volumes:
       - /portainer/Files/AppData/Config/netalertx/config:/home/pi/pialert/config 
-      - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db           
+      - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db    
     environment:
-    - TZ=${TZ}
-    - PORT=${PORT}
-    # ❗ DANGER ZONE BELOW - Setting ALWAYS_FRESH_INSTALL=true will delete the content of the /db & /config folders
-    - ALWAYS_FRESH_INSTALL=${ALWAYS_FRESH_INSTALL}
+      - TZ=Europe/Athens      
+      - PORT=20211
