@@ -12,4 +12,4 @@ services:
       - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db    
     environment:
       - TZ=Europe/Athens      
-      - PORT=20211
+      - PORT=40211
