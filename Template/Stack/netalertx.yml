@@ -10,11 +10,11 @@ services:
     container_name: netalertx
     network_mode: host
     # restart: unless-stopped
-      volumes:
-        - /portainer/Files/AppData/Config/netalertx/config:/home/pi/pialert/config 
-        - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db           
-      environment:
-      - TZ=${TZ}
-      - PORT=${PORT}
-      # ❗ DANGER ZONE BELOW - Setting ALWAYS_FRESH_INSTALL=true will delete the content of the /db & /config folders
-      - ALWAYS_FRESH_INSTALL=${ALWAYS_FRESH_INSTALL}
+    volumes:
+      - /portainer/Files/AppData/Config/netalertx/config:/home/pi/pialert/config 
+      - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db           
+    environment:
+    - TZ=${TZ}
+    - PORT=${PORT}
+    # ❗ DANGER ZONE BELOW - Setting ALWAYS_FRESH_INSTALL=true will delete the content of the /db & /config folders
+    - ALWAYS_FRESH_INSTALL=${ALWAYS_FRESH_INSTALL}
