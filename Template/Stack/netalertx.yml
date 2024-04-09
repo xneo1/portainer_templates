@@ -10,9 +10,9 @@ services:
     container_name: netalertx
     network_mode: host
     # restart: unless-stopped
-    volumes:
-      - /portainer/Files/AppData/Config/netalertx/config:/home/pi/pialert/config 
-      - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db           
+      volumes:
+        - /portainer/Files/AppData/Config/netalertx/config:/home/pi/pialert/config 
+        - /portainer/Files/AppData/Config/netalertx/db:/home/pi/pialert/db           
       environment:
       - TZ=${TZ}
       - PORT=${PORT}
