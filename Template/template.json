@@ -4093,6 +4093,19 @@
       "type": 3
       },
       {
+      "categories": ["Networking"],
+      "description": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.", 
+      "logo": "https://avatars.githubusercontent.com/u/96159884?s=48&v=4",
+      "name": "NetAlertX",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/NetAlertX.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "NetAlertX",
+      "type": 3
+      },
+      {
       "categories": ["File Browsers"],
       "description": "Chibisafe is a modern and self-hosted take on file uploading services that can handle anything you throw at it thanks to it's robust and fast API, chunked uploads support and more.", 
       "logo": "https://chibisafe.moe/logo.svg",
