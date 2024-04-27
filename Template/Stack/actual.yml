@@ -6,5 +6,5 @@ services:
             - 5007:5006
         volumes:
             - /portainer/Files/AppData/Config/actual:/data
-        image: 'jlongster/actual-server:latest'
+        image: 'actualbudget/actual-server:latest'
         restart: unless-stopped
