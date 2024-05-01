@@ -15,7 +15,7 @@ services:
       - REDIS_HOST=archivist-redis          # don't add protocol
       - HOST_UID=1000
       - HOST_GID=1000
-      - TA_HOST=tubearchivist.local         # set your host name
+      - TA_HOST=INSERT_YOURIP_OR_HOSTNAME         ##REQUIRED -  set your Server IP or host name
       - TA_USERNAME=tubearchivist           # your initial TA credentials
       - TA_PASSWORD=verysecret              # your initial TA credentials
       - ELASTIC_PASSWORD=verysecret         # set password for Elasticsearch
@@ -28,7 +28,7 @@ services:
     container_name: archivist-redis
     restart: unless-stopped
     expose:
-      - "6379"
+      - 6379
     volumes:
       - /portainer/Files/AppData/Config/tubearchivist/redis:/data
     depends_on:
@@ -38,11 +38,11 @@ services:
     container_name: archivist-es
     restart: unless-stopped
     environment:
-      - "ELASTIC_PASSWORD=verysecret"       # matching Elasticsearch password
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "xpack.security.enabled=true"
-      - "discovery.type=single-node"
-      - "path.repo=/usr/share/elasticsearch/data/snapshot"
+      - ELASTIC_PASSWORD=verysecret       # matching Elasticsearch password
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=true
+      - discovery.type=single-node
+      - path.repo=/usr/share/elasticsearch/data/snapshot
     ulimits:
       memlock:
         soft: -1
@@ -50,4 +50,4 @@ services:
     volumes:
       - /portainer/Files/AppData/Config/tubearchivist/es:/usr/share/elasticsearch/data    # check for permission error when using bind mount, see readme
     expose:
-      - "9200"
+      - 9200
