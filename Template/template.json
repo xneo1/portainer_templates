@@ -4119,6 +4119,19 @@
       "type": 3
       },
       {
+      "categories": ["Multimedia"],
+      "description": "Invidious is an open source alternative front-end to YouTube.", 
+      "logo": "https://invidious.io/invidious-colored-vector.svg",
+      "name": "Invidious",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/invidious.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Invidious",
+      "type": 3
+      },
+      {
       "categories": ["File Browsers"],
       "description": "Chibisafe is a modern and self-hosted take on file uploading services that can handle anything you throw at it thanks to it's robust and fast API, chunked uploads support and more.", 
       "logo": "https://chibisafe.moe/logo.svg",
