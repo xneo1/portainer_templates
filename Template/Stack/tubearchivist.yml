@@ -51,9 +51,3 @@ services:
       - es:/usr/share/elasticsearch/data    # check for permission error when using bind mount, see readme
     expose:
       - "9200"
-
-volumes:
-  media:
-  cache:
-  redis:
-  es:
