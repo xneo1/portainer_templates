@@ -30,7 +30,7 @@ services:
     expose:
       - "6379"
     volumes:
-      - redis:/data
+      - /portainer/Files/AppData/Config/tubearchivist/redis:/data
     depends_on:
       - archivist-es
   archivist-es:
