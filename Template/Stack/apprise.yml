@@ -12,7 +12,6 @@
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
-version: "2"
 services:
   apprise-api:
     image: lscr.io/linuxserver/apprise-api
