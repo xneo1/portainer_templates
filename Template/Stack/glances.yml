@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   glances-monitoring:
     image: nicolargo/glances:latest-alpine
