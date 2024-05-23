@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   paste-bin:
     container_name: hasty-paste
