@@ -1,4 +1,3 @@
-version: '3'
 services:
   kiwix-serve:
     image: kiwix/kiwix-serve
