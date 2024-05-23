@@ -4591,7 +4591,7 @@
     {
       "categories": ["Network"],
       "description": "Speedtest Tracker is a self-hosted internet performance tracking application that runs speedtest checks against Ookla's Speedtest service.", 
-      "logo": "https://docs.speedtest-tracker.dev/~gitbook/image?url=https%3A%2F%2Fdocs.speedtest-tracker.dev%2F%7Egitbook%2Ficon%3Fsize%3Dmedium%26theme%3Ddark&width=32&dpr=1&quality=100&sign=7ccc1d16964e508a913bfd2d39b0b9292ff1bf58108d1fb3d18e2fdcfce595ef",
+      "logo": "",
       "name": "speedtest-tracker",
       "platform": "linux",
       "repository": {
