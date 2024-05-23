@@ -1,6 +1,4 @@
 #https://raw.githubusercontent.com/P3TERX/Aria2-Pro-Docker/master/docker-compose.yml
-version: "3.8"
-
 services:
 
   Aria2-Pro:
