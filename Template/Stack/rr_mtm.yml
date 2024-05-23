@@ -1,5 +1,3 @@
----
-version: "3.7"
 services:
   lidarr:
     container_name: lidarr
