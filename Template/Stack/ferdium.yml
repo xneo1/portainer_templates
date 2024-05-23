@@ -1,4 +1,3 @@
-version: "2"
 services:
   ferdi-server:
     image:  ferdium/ferdium-server:latest
