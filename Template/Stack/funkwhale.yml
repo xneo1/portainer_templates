@@ -1,4 +1,3 @@
-version: "3"
 services:
   funkwhale:
     container_name: funkwhale
