@@ -1,5 +1,3 @@
----
-version: "3"
 services:
   grocy:
     image: lscr.io/linuxserver/grocy:latest
