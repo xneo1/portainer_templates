@@ -1,5 +1,3 @@
----
-version: "2.1"
 services:
   get_iplayer:
     image: ghcr.io/thespad/whisparr:latest
