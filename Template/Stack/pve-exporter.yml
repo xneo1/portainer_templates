@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   pve-exporter:
     image: prompve/prometheus-pve-exporter
