@@ -1,4 +1,3 @@
-version: '3.3'
 services:
     actual-server:
         container_name: actual
