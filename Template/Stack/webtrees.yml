@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   webtrees_db:
     image: postgres:16
