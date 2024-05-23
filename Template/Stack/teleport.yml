@@ -1,4 +1,3 @@
-version: '2'
 services:
   #
   # one is a single-node Teleport cluster called "one" (runs all 3 roles: proxy, auth and node)
