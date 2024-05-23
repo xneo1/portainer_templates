@@ -1,4 +1,3 @@
-version: "3.7"
 services:
   adguardhome:
     image: adguard/adguardhome
