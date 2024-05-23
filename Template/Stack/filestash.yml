@@ -1,4 +1,3 @@
-version: '2'
 services:
   filestash:
     container_name: filestash
