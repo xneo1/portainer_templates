@@ -1,4 +1,3 @@
-version: "3.3"
 services:
     kapowarr:
         container_name: kapowarr
