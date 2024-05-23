@@ -1,4 +1,3 @@
-version: '3'
 services:
   snippet-box:
     image: pawelmalak/snippet-box
