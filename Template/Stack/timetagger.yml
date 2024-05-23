@@ -1,4 +1,3 @@
-version: "3"
 services:
   timetagger:
     image: ghcr.io/almarklein/timetagger
