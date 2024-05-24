@@ -1,7 +1,7 @@
 services:
   qflood:
     container_name: qflood
-    image: engels74/qflood
+    image: hotio/qflood
     ports:
       - "8282:8080"
       - "3223:3000"
