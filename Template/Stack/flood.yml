@@ -2,6 +2,7 @@ services:
   qflood:
     container_name: qflood
     image: hotio/qflood
+    restart: always
     ports:
       - "8282:8080"
       - "3223:3000"
