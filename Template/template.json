@@ -4602,6 +4602,19 @@
       "type": 3
     },
     {
+      "categories": ["Productivity", "Low Code"],
+      "description": "OpnForm is an open-source form builder. It's an alternative to products like Typeform, JotForm, Tally etc.", 
+      "logo": "https://opnform.com/img/logo.svg",
+      "name": "opnform",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/opnform.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "OpnForm",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
