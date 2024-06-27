@@ -4615,6 +4615,19 @@
       "type": 3
     },
     {
+      "categories": ["Social", "Events"],
+      "description": "Gathio is a simple, federated, privacy-first event hosting platform.", 
+      "logo": "https://gath.io/og-image.jpg",
+      "name": "gathio",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/gathio.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Gathio",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
