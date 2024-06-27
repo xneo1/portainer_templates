@@ -1,4 +1,4 @@
-~~Nov21|Dec21|Jan22|Feb22|Mar22|Apr22|May22|Jun22|Jul22|Aug22|Sep22|Oct22|Nov22|Dec22|Jan23|Feb23|Mar23|Apr2023|May23|Jun23|Jul23|Aug23|Sep23|Oct23|Nov23|Dec23|Jan24|Feb24|Mar24|Apr24~~
+~~Nov21|Dec21|Jan22|Feb22|Mar22|Apr22|May22|Jun22|Jul22|Aug22|Sep22|Oct22|Nov22|Dec22|Jan23|Feb23|Mar23|Apr2023|May23|Jun23|Jul23|Aug23|Sep23|Oct23|Nov23|Dec23|Jan24|Feb24|Mar24|Apr24|May24~~|JUN24
 
 **May 2024: Keep on adding stuff!**
 
@@ -41,6 +41,14 @@ Go to [details page](details.md)
 
 ## App List
 ## Update:
+
+<details>
+<summary>27/06/2024</summary>
+<br>
+ <ul>
+  <li>Gathio</li>
+  </ul>
+</details>
 
 <details>
 <summary>27/05/2024</summary>
