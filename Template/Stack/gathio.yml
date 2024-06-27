@@ -1,0 +1,11 @@
+services:
+    gathio:
+        build: .
+        links:
+            - mongo
+        ports:
+            - 3022:3000
+    mongo:
+        image: mongo:latest
+        volumes:
+             - /portainer/Files/AppData/Config/gathio/mongodb_data_db:/data/db
