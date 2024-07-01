@@ -1,6 +1,6 @@
 services:
   umami:
-    image: ghcr.io/mikecao/umami:postgresql-latest
+    image: ghcr.io/umami-software/umami:postgresql-latest
     ports:
       - "3003:3000"
     environment:
@@ -11,7 +11,7 @@ services:
       - db
     restart: always
   db:
-    image: postgres:12-alpine
+    image: postgres:15-alpine
     environment:
       POSTGRES_DB: umami
       POSTGRES_USER: umami
