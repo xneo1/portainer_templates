@@ -4628,6 +4628,19 @@
       "type": 3
     },
     {
+      "categories": ["Monitoring"],
+      "description": "A lightweight server resource monitoring hub with historical data, docker stats, and alerts.", 
+      "logo": "",
+      "name": "beszel",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/beszel.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Beszel",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
