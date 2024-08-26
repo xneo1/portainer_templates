@@ -4654,6 +4654,19 @@
       "type": 3
     },
     {
+      "categories": ["Analytics"],
+      "description": "Medama Analytics is an open-source project dedicated to providing self-hostable, cookie-free website analytics.", 
+      "logo": "https://raw.githubusercontent.com/medama-io/medama/main/.github/images/banner-dark.svg",
+      "name": "medama",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/medama.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Medama",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
