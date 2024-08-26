@@ -47,6 +47,7 @@ Go to [details page](details.md)
 <br>
  <ul>
   <li>Fusion</li>
+  <li>Medama Analytics</li>
   </ul>
 </details>
 
