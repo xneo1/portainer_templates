@@ -1,0 +1,9 @@
+services:
+    fusion:
+        ports:
+            - 8980:8080
+        volumes:
+            - /portainer/Files/AppData/Config/fusion:/data
+        environment:
+            - PASSWORD=changeme
+        image: rook1e404/fusion
