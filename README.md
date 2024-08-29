@@ -43,6 +43,14 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>29/08/2024</summary>
+<br>
+ <ul>
+  <li>Markopolis</li>
+  </ul>
+</details>
+
+<details>
 <summary>26/08/2024</summary>
 <br>
  <ul>
