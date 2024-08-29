@@ -4667,6 +4667,19 @@
       "type": 3
     },
     {
+      "categories": ["Notes"],
+      "description": "", 
+      "logo": "",
+      "name": "markopolis",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/markopolis.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Markopolis",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
