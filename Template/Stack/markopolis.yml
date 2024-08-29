@@ -1,0 +1,18 @@
+services:
+  markopolis:
+    image: ghcr.io/rishikanthc/markopolis:2.0.0
+    ports:
+      - "81080:80"
+    environment:
+      - MARKOPOLIS_DOMAIN=""
+      - MARKOPOLIS_FRONTEND_URL = ""
+      - MARKOPOLIS_TITLE="Awesome Notes"
+      - MARKOPOLIS_MD_PATH=/app/markdown
+      - MARKOPOLIS_API_KEY=<really long random alpha-numeric string>
+    volumes:
+      - /portainer/Files/AppData/Config/markopolis:/app/markdown
+    restart: unless-stopped
+
+volumes:
+  markopolis_data:
+    driver: local
