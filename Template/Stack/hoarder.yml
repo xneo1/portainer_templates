@@ -1,0 +1,65 @@
+services:
+  hoarder-web:
+    image: ghcr.io/hoarder-app/hoarder-web:latest
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/hoarder/data:/data
+    ports:
+      - 3088:3000
+    environment:
+      REDIS_HOST: redis
+      MEILI_ADDR: http://meilisearch:7700
+      DATA_DIR: /data
+      HOARDER_VERSION: latest
+      NEXTAUTH_SECRET: qxo0NvLCphGhkAu5fBcS1B0MxCeoig8G
+      NEXTAUTH_URL: http://localhost:3088
+      MEILI_MASTER_KEY: aqxYm5UWCphGhkAu5fBcSJAPbSzeoiC2X
+  hoarder-redis:
+    image: redis:7.2-alpine
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/hoarder/redis:/data
+  hoarder-chrome:
+    image: gcr.io/zenika-hub/alpine-chrome:123
+    restart: unless-stopped
+    command:
+      - --no-sandbox
+      - --disable-gpu
+      - --disable-dev-shm-usage
+      - --remote-debugging-address=0.0.0.0
+      - --remote-debugging-port=9222
+      - --hide-scrollbars
+  hoarder-meilisearch:
+    image: getmeili/meilisearch:v1.6
+    restart: unless-stopped
+    environment:
+      MEILI_NO_ANALYTICS: "true"
+      HOARDER_VERSION: latest
+      NEXTAUTH_SECRET: qxo0NvLCphGhkAu5fBcS1B0MxCeoig8G
+      NEXTAUTH_URL: http://localhost:3088
+      MEILI_MASTER_KEY: aqxYm5UWCphGhkAu5fBcSJAPbSzeoiC2X
+    volumes:
+      - /portainer/Files/AppData/Config/hoarder/meilisearch:/meili_data
+  hoarder-workers:
+    image: ghcr.io/hoarder-app/hoarder-workers:latest
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/hoarder/data:/data
+    environment:
+      REDIS_HOST: redis
+      MEILI_ADDR: http://meilisearch:7700
+      BROWSER_WEB_URL: http://chrome:9222
+      DATA_DIR: /data
+      HOARDER_VERSION: latest
+      NEXTAUTH_SECRET: qxo0NvLCphGhkAu5fBcS1B0MxCeoig8G
+      NEXTAUTH_URL: http://localhost:3088
+      MEILI_MASTER_KEY: aqxYm5UWCphGhkAu5fBcSJAPbSzeoiC2X
+      # OPENAI_API_KEY: ...
+    depends_on:
+      hoarder-web:
+        condition: service_started
+
+volumes:
+  redis:
+  meilisearch:
+  data:
