@@ -43,6 +43,14 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>20/09/2024</summary>
+<br>
+ <ul>
+  <li>TinyMediaManager</li>
+  </ul>
+</details>
+
+<details>
 <summary>03/09/2024</summary>
 <br>
  <ul>
