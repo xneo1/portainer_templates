@@ -969,7 +969,7 @@
       ]
     },
     {
-      "categories": ["Tools"],
+      "categories": ["Remote Control"],
       "description": "A clientless remote desktop gateway.",
       "image": "oznu/guacamole:latest",
       "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/guacamole.png",
