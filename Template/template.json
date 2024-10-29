@@ -4719,6 +4719,19 @@
       "type": 3
     },
     {
+      "categories": ["Remote Control"],
+      "description": "The open source server management software for SSH, VNC & RDP", 
+      "logo": "https://docs.nexterm.dev/logo.png",
+      "name": "nexterm",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/nexterm.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Nexterm",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
