@@ -4732,6 +4732,19 @@
       "type": 3
     },
     {
+      "categories": ["Automation"],
+      "description": "The world's most popular workflow automation platform for technical teams", 
+      "logo": "https://avatars.githubusercontent.com/u/45487711?s=48&v=4",
+      "name": "n8n",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/n8n.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "N8n",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
