@@ -43,6 +43,14 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>09/01/2025</summary>
+<br>
+ <ul>
+  <li>Blinko</li>
+  </ul>
+</details>
+
+<details>
 <summary>07/11/2024</summary>
 <br>
  <ul>
