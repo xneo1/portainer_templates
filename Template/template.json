@@ -4156,8 +4156,7 @@
       },  
       "title": "Kiwix",
       "type": 3
-    }, 
-
+    },
     {
       "categories": ["Tools"],
       "description": "The recipe manager that allows you to manage your ever growing collection of digital recipes.", 
@@ -4757,8 +4756,6 @@
       "title": "Pinchflat",
       "type": 3
     },
-
-
     {
       "categories": ["Productivity"],
       "description": "Blinko is an innovative open-source project designed for individuals who want to quickly capture and organize their fleeting thoughts. Blinko allows users to seamlessly jot down ideas the moment they strike, ensuring that no spark of creativity is lost.", 
@@ -5578,6 +5575,69 @@
           "container": "/config"
         }
       ]
+    },
+    {
+      "categories": ["Games"],
+      "description": "Scan, enrich, browse and play your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
+      "env": [
+        {
+          "name": "DB_ROOT_PASSWORD",
+          "label": "Database root password",
+          "description": "Use a unique, secure password"
+        },
+        {
+          "name": "DB_PASSWD",
+          "label": "Database password",
+          "description": "Use a unique, secure password"
+        },
+        {
+          "name": "ROMM_AUTH_SECRET_KEY",
+          "label": "Auth Secret Key",
+          "description": "Generate a key with `openssl rand -hex 32`"
+        },
+        {
+          "name": "IGDB_CLIENT_ID",
+          "label": "IGDB Client ID",
+          "description": "Generate an ID and SECRET in IGDB"
+        },
+        {
+          "name": "IGDB_CLIENT_SECRET",
+          "label": "IGDB Client Secret",
+          "description": "https://api-docs.igdb.com/#account-creation"
+        },
+        {
+          "name": "MOBYGAMES_API_KEY",
+          "label": "Mobygames API Key",
+          "description": "https://www.mobygames.com/info/api/"
+        },
+        {
+          "name": "STEAMGRIDDB_API_KEY",
+          "label": "StreamgridDB API Key",
+          "description": "https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
+        },
+        {
+          "name": "PORT",
+          "label": "Port",
+          "description": "The port RomM will be available on",
+          "default": "8080"
+        },
+        {
+          "name": "library",
+          "label": "Library Path",
+          "description": "See https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.",
+          "default": "/path/to/library"
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/rommapp/romm/refs/heads/release/.github/resources/isotipo.svg",
+      "name": "romm",
+      "note": "Check out <a href='https://github.com/rommapp/romm/wiki' target='_blank' rel='noopener'>the wiki</a> for more information.",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/romm.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "RomM",
+      "type": 3
     }
   ]
 }
