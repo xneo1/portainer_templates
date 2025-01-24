@@ -3,7 +3,7 @@ services:
        image: fallenbagel/jellyseerr:latest
        container_name: jellyseerr
        environment:
-            - LOG_LEVEL=debug
+            - LOG_LEVEL=INFO
             - TZ=Europe/Athens
        ports:
             - 5055:5055
