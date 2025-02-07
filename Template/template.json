@@ -4773,6 +4773,19 @@
       "type": 3
     },
     {
+      "categories": ["Productivity"],
+      "description": "The Workspace Streaming Platform.Stream your workspace directly to your web browser on any device and from any location.", 
+      "logo": "https://kasmweb.com/assets/images/logo.svg",
+      "name": "kasmworkspaces",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/kasmworkspaces.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Kasm Workspaces",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
