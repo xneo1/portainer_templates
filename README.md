@@ -43,6 +43,14 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>07/02/2025</summary>
+<br>
+ <ul>
+  <li>Kasm Workspaces</li>
+  </ul>
+</details>
+
+<details>
 <summary>09/01/2025</summary>
 <br>
  <ul>
