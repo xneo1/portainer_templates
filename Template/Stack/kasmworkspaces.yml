@@ -3,8 +3,6 @@ services:
     image: lscr.io/linuxserver/kasm:latest
     container_name: kasm
     privileged: true
-    security_opt:
-      - apparmor:rootlesskit #optional
     environment:
       - KASM_PORT=7443
       - DOCKER_MTU=1500 #optional
