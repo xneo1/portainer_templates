@@ -4,14 +4,14 @@ services:
     container_name: romm-mariadb-dev
     restart: unless-stopped
     env_file:
-      - .env
+      - romm.env
     environment:
       - MARIADB_ROOT_PASSWORD=$DB_ROOT_PASSWD
       - MARIADB_DATABASE=$DB_NAME
       - MARIADB_USER=$DB_USER
       - MARIADB_PASSWORD=$DB_PASSWD
     volumes:
-      - maria-db:/var/lib/mysql
+      - /portainer/Files/AppData/Config/romm/maria-db:/var/lib/mysql
     ports:
       - $DB_PORT:3306
 
@@ -35,7 +35,7 @@ services:
       POSTGRES_USER: $POSTGRES_USER
       POSTGRES_DB: $POSTGRES_DB
     volumes:
-      - postgres-db:/var/lib/postgresql/data
+      - /portainer/Files/AppData/Config/romm/postgres-db:/var/lib/postgresql/data
     ports:
       - 5432:5432
 
@@ -55,8 +55,8 @@ services:
       AUTHENTIK_SECRET_KEY: $AUTHENTIK_SECRET_KEY
       AUTHENTIK_BOOTSTRAP_PASSWORD: $AUTHENTIK_BOOTSTRAP_PASSWORD
     volumes:
-      - authentik-media:/media
-      - authentik-templates:/templates
+      - /portainer/Files/AppData/Config/romm/authentik-media:/media
+      - /portainer/Files/AppData/Config/romm/authentik-templates:/templates
     ports:
       - 9009:9000
       - 9943:9443
@@ -80,14 +80,8 @@ services:
       AUTHENTIK_SECRET_KEY: $AUTHENTIK_SECRET_KEY
       AUTHENTIK_BOOTSTRAP_PASSWORD: $AUTHENTIK_BOOTSTRAP_PASSWORD
     volumes:
-      - authentik-media:/media
-      - authentik-templates:/templates
+      - /portainer/Files/AppData/Config/romm/authentik-media:/media
+      - /portainer/Files/AppData/Config/romm/authentik-templates:/templates
     depends_on:
       - romm-postgres-dev
       - romm-valkey-dev
-
-volumes:
-  maria-db:
-  postgres-db:
-  authentik-media:
-  authentik-templates:
