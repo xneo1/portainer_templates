@@ -4786,6 +4786,19 @@
       "type": 3
     },
     {
+      "categories": ["Entertainment"],
+      "description": "A beautiful, powerful, self-hosted rom manager.", 
+      "logo": "https://raw.githubusercontent.com/rommapp/romm/release/.github/resources/romm_complete.png",
+      "name": "romm",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/romm.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Romm",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
