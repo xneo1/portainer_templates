@@ -1,87 +1,49 @@
 services:
-  romm-mariadb-dev:
+  romm:
+    image: rommapp/romm:latest
+    container_name: romm
+    restart: unless-stopped
+    environment:
+      - DB_HOST=romm-db
+      - DB_NAME=romm # Should match MARIADB_DATABASE in mariadb
+      - DB_USER=romm-user # Should match MARIADB_USER in mariadb
+      - DB_PASSWD= # Should match MARIADB_PASSWORD in mariadb
+      - ROMM_AUTH_SECRET_KEY= # Generate a key with `openssl rand -hex 32`
+      - IGDB_CLIENT_ID= # Generate an ID and SECRET in IGDB
+      - IGDB_CLIENT_SECRET= # https://api-docs.igdb.com/#account-creation
+      - MOBYGAMES_API_KEY= # https://www.mobygames.com/info/api/
+      - STEAMGRIDDB_API_KEY= # https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
+    volumes:
+      - /portainer/Files/AppData/Config/romm/resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
+      - /portainer/Files/AppData/Config/romm/redis_data:/redis-data # Cached data for background tasks
+      - /portainer/roms/library:/romm/library # Your game library. Check https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.
+      - /portainer/roms/assets:/romm/assets # Uploaded saves, states, etc.
+      - /portainer/Files/AppData/Config/romm/config:/romm/config # Path where config.yml is stored
+    ports:
+      - 480:8080
+    depends_on:
+      romm-db:
+        condition: service_healthy
+        restart: true
+  romm-db:
     image: mariadb:latest
-    container_name: romm-mariadb-dev
+    container_name: romm-db
     restart: unless-stopped
     env_file:
       - romm.env
-    environment:
-      - MARIADB_ROOT_PASSWORD=$DB_ROOT_PASSWD
-      - MARIADB_DATABASE=$DB_NAME
-      - MARIADB_USER=$DB_USER
-      - MARIADB_PASSWORD=$DB_PASSWD
     volumes:
       - /portainer/Files/AppData/Config/romm/maria-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 30s
+      start_interval: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 5
     ports:
       - $DB_PORT:3306
 
-  romm-valkey-dev:
-    image: valkey/valkey:8
-    container_name: romm-valkey-dev
-    restart: unless-stopped
-    env_file:
-      - romm.env
-    ports:
-      - $REDIS_PORT:6379
 
-  romm-postgres-dev:
-    image: docker.io/library/postgres:16-alpine
-    container_name: romm-postgresql-dev
-    restart: unless-stopped
-    env_file:
-      - romm.env
-    environment:
-      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      POSTGRES_USER: $POSTGRES_USER
-      POSTGRES_DB: $POSTGRES_DB
-    volumes:
-      - /portainer/Files/AppData/Config/romm/postgres-db:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
 
-  romm-authentik-server:
-    image: ghcr.io/goauthentik/server:2024.10.4
-    container_name: romm-authentik-server
-    restart: unless-stopped
-    command: server
-    env_file:
-      - romm.env
-    environment:
-      AUTHENTIK_REDIS__HOST: romm-valkey-dev
-      AUTHENTIK_POSTGRESQL__HOST: romm-postgres-dev
-      AUTHENTIK_POSTGRESQL__USER: $POSTGRES_USER
-      AUTHENTIK_POSTGRESQL__NAME: $POSTGRES_DB
-      AUTHENTIK_POSTGRESQL__PASSWORD: $POSTGRES_PASSWORD
-      AUTHENTIK_SECRET_KEY: $AUTHENTIK_SECRET_KEY
-      AUTHENTIK_BOOTSTRAP_PASSWORD: $AUTHENTIK_BOOTSTRAP_PASSWORD
-    volumes:
-      - /portainer/Files/AppData/Config/romm/authentik-media:/media
-      - /portainer/Files/AppData/Config/romm/authentik-templates:/templates
-    ports:
-      - 9009:9000
-      - 9943:9443
-    depends_on:
-      - romm-postgres-dev
-      - romm-valkey-dev
 
-  romm-authentik-worker:
-    image: ghcr.io/goauthentik/server:2024.10.4
-    container_name: romm-authentik-worker
-    restart: unless-stopped
-    command: worker
-    env_file:
-      - romm.env
-    environment:
-      AUTHENTIK_REDIS__HOST: romm-valkey-dev
-      AUTHENTIK_POSTGRESQL__HOST: romm-postgres-dev
-      AUTHENTIK_POSTGRESQL__USER: $POSTGRES_USER
-      AUTHENTIK_POSTGRESQL__NAME: $POSTGRES_DB
-      AUTHENTIK_POSTGRESQL__PASSWORD: $POSTGRES_PASSWORD
-      AUTHENTIK_SECRET_KEY: $AUTHENTIK_SECRET_KEY
-      AUTHENTIK_BOOTSTRAP_PASSWORD: $AUTHENTIK_BOOTSTRAP_PASSWORD
-    volumes:
-      - /portainer/Files/AppData/Config/romm/authentik-media:/media
-      - /portainer/Files/AppData/Config/romm/authentik-templates:/templates
-    depends_on:
-      - romm-postgres-dev
-      - romm-valkey-dev
+  
