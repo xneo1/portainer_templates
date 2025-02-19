@@ -7,11 +7,9 @@ services:
       - apparmor:rootlesskit #optional
     environment:
       - KASM_PORT=7443
-      #- DOCKER_HUB_USERNAME=USER #optional
-      #- DOCKER_HUB_PASSWORD=PASS #optional
       - DOCKER_MTU=1500 #optional
     volumes:
-      - /portainer/Files/AppData/Config/kasmworkspaces/data/opt
+      - /portainer/Files/AppData/Config/kasmworkspaces/data:/opt
       - /portainer/Files/AppData/Config/kasmworkspaces/profiles:/profiles #optional
       - /dev/input:/dev/input #optional
       - /run/udev/data:/run/udev/data #optional
