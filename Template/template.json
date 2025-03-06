@@ -4799,6 +4799,19 @@
       "type": 3
     },
     {
+      "categories": ["Metrics"],
+      "description": "Nutify is a comprehensive monitoring system designed to track the health and performance of your Uninterruptible Power Supply (UPS) devices.", 
+      "logo": "https://github.com/DartSteven/Nutify/raw/main/pic/logo.jpg",
+      "name": "nutify",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/nutify.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Nutify",
+      "type": 3
+    },
+    {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
       "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
