@@ -1,0 +1,52 @@
+services:
+  nut:
+    image: dartsteven/nutify:amd64-0.1.0                # Official Nutify image for AMD64 architecture (supported architectures: amd64, arm64, armv7)
+    # build: . # Or build from source                   # Uncomment to build from source instead of using pre-built image
+    container_name: Nutify-Server                       # Name of the container in Docker
+    privileged: true                                    # Grants extended privileges to the container for hardware access
+    cap_add:                                            # Additional Linux capabilities for the container
+      - SYS_ADMIN                                       # Allows administrative operations
+      - SYS_RAWIO                                       # Allows direct I/O access
+      - MKNOD                                           # Allows creation of special files
+    devices:                                            # Device mapping from host to container
+      - /dev/bus/usb:/dev/bus/usb:rwm                   # Maps USB devices for UPS detection (read-write-mknod)
+    device_cgroup_rules:                                # Control group rules for device access
+      - 'c 189:* rwm'                                   # USB device access rule (character device 189)
+    environment:                                        # Environment variables for container configuration
+      # ===== SERVER CONFIGURATION =====
+      - SERVER_NAME=                                    # Name of the server (displayed in UI)
+      - SERVER_PORT=5050                                # Port for web interface
+      - SERVER_HOST=0.0.0.0                             # Host address to bind web server (0.0.0.0 = all interfaces)
+      - TIMEZONE=                                       # Timezone for date/time display (e.g., Europe/Rome)
+      - ENCRYPTION_KEY=                                 # Secret key for data encryption (MUST be set)
+      
+      # ===== UPS CONNECTION SETTINGS =====
+      - UPS_HOST=                                       # IP/hostname of UPS (leave empty for local USB connection)
+      - UPS_NAME=ups                                    # Name of the UPS in NUT configuration
+      - UPS_DRIVER=usbhid-ups                           # NUT driver for UPS (usbhid-ups for USB connected UPS)
+      - UPS_PORT=auto                                   # Port for UPS connection (auto = automatic detection)
+      - UPS_REALPOWER_NOMINAL=1000                      # Nominal power of UPS in watts
+      
+      # ===== UPS AUTHENTICATION =====
+      - UPS_USER=admin                                  # Username for UPS authentication
+      - UPS_PASSWORD=hunter2                            # Password for UPS authentication
+      
+      # ===== UPS COMMAND SETTINGS =====
+      - UPSCMD_USER=admin                               # Username for sending commands to UPS
+      - UPSCMD_PASSWORD=hunter2                         # Password for sending commands to UPS
+      
+      # ===== LOGGING CONFIGURATION =====
+      - LOG=false                                       # Enable/disable logging (true/false)
+      - LOG_LEVEL=DEBUG                                 # Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+      - LOG_WERKZEUG=false                              # Enable/disable Flask's Werkzeug logs
+      - ENABLE_LOG_STARTUP=N                            # Set to Y to enable essential startup logs
+      
+    ports:                                              # Port mapping from host to container
+      - 3493:3493                                       # NUT server port
+      - 5050:5050                                       # Web interface port
+    volumes:                                            # Volume mapping for persistent data
+      - /portainer/Files/AppData/Config/nutify/nut_data:/var/run/nut                         # NUT runtime data
+      - /portainer/Files/AppData/Config/nutify/logs/logs:/app/nutify/logs                  # Log files
+      - /portainer/Files/AppData/Config/nutify/instance:/app/nutify/instance          # Application data including SQLite database
+    restart: always                                     # Restart policy (always restart on failure)
+    user: root                                          # Run container as root user for hardware access
