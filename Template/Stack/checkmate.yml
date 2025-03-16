@@ -1,5 +1,5 @@
 services:
-  checkmate_client:
+  client:
     image: bluewaveuptime/uptime_client:latest
     restart: always
     environment:
@@ -8,21 +8,21 @@ services:
       - "1180:80"
       - "11443:443"
     depends_on:
-      - checkmate_server
-  checkmate_server:
+      - server
+  server:
     image: bluewaveuptime/uptime_server:latest
     restart: always
     ports:
       - "5000:5000"
     depends_on:
-      - checkmate_redis
-      - checkmate_mongodb
+      - redis
+      - mongodb
     environment:
       - DB_CONNECTION_STRING=mongodb://mongodb:27017/uptime_db
-      - REDIS_HOST=checkmate_redis
+      - REDIS_HOST=redis
     # volumes:
     # - /var/run/docker.sock:/var/run/docker.sock:ro
-  checkmate_redis:
+  redis:
     image: bluewaveuptime/uptime_redis:latest
     restart: always
     ports:
@@ -35,7 +35,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 5s
-  checkmate_mongodb:
+  mongodb:
     image: bluewaveuptime/uptime_database_mongo:latest
     restart: always
     volumes:
