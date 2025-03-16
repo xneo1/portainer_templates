@@ -4811,6 +4811,19 @@
       "title": "Nutify",
       "type": 3
     },
+	  {
+      "categories": ["Network"],
+      "description": "An open source uptime and infrastructure monitoring application.", 
+      "logo": "https://docs.checkmate.so/~gitbook/image?url=https%3A%2F%2F417506262-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FbSM5aZr0UvTUpL4NJpSj%252Fsites%252Fsite_47uuo%252Ficon%252Fwj0lMFzW30pTtvtrrGT7%252FFrame%252028.png%3Falt%3Dmedia%26token%3D252566cf-b036-48ae-b73b-251b67d4f1c5&width=32&dpr=3&quality=100&sign=5c378a81&sv=2",
+      "name": "checkmate",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/checkmate.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Checkmate",
+      "type": 3
+    },
     {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
