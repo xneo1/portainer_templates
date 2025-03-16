@@ -43,6 +43,14 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>16/03/2025</summary>
+<br>
+ <ul>
+  <li>Checkmate</li>
+  </ul>
+</details>
+
+<details>
 <summary>06/03/2025</summary>
 <br>
  <ul>
