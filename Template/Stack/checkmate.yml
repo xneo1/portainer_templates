@@ -8,15 +8,15 @@ services:
       - "80:80"
       - "443:443"
     depends_on:
-      - server
+      - checkmate_server
   checkmate_server:
     image: bluewaveuptime/uptime_server:latest
     restart: always
     ports:
       - "5000:5000"
     depends_on:
-      - redis
-      - mongodb
+      - checkmate_redis
+      - checkmate_mongodb
     environment:
       - DB_CONNECTION_STRING=mongodb://mongodb:27017/uptime_db
       - REDIS_HOST=checkmate_redis
