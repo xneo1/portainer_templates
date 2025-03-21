@@ -1,0 +1,79 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "type": "container",
+      "title": "AdGuard Home",
+      "description": "Network-wide ads & trackers blocking DNS server.",
+      "platform": "linux",
+      "categories": [
+        "DNS",
+        "Privacy",
+        "Networking"
+      ],
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/logos/adguard.png",
+      "image": "adguard/adguardhome:latest",
+      "ports": [
+        {
+          "host": "53",
+          "container": "53/udp"
+        },
+        {
+          "host": "67",
+          "container": "67/udp"
+        },
+        {
+          "host": "68",
+          "container": "68/udp"
+        },
+        {
+          "host": "80",
+          "container": "80/tcp"
+        },
+        {
+          "host": "443",
+          "container": "443/tcp"
+        },
+        {
+          "host": "3000",
+          "container": "3000/tcp"
+        },
+        {
+          "host": "853",
+          "container": "853/tcp"
+        },
+        {
+          "host": "5443",
+          "container": "5443/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "bind": "/opt/adguard/work",
+          "container": "/opt/adguardhome/work"
+        },
+        {
+          "bind": "/opt/adguard/conf",
+          "container": "/opt/adguardhome/conf"
+        }
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "type": "stack",
+      "title": "Authelia",
+      "description": "Self-hosted Single Sign-On and 2FA for applications.",
+      "platform": "linux",
+      "categories": [
+        "Security",
+        "Authentication",
+        "SSO"
+      ],
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/logos/authelia.png",
+      "note": "Deploys using external Docker Compose file.",
+      "repository": {
+        "url": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Stacks/authelia.yml"
+      }
+    }
+  ]
+}
