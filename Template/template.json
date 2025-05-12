@@ -4824,6 +4824,20 @@
       "title": "Checkmate",
       "type": 3
     },
+
+     {
+      "categories": ["Location Tracking"],
+      "description": "Self-Hosted Location History Tracker. | Visualize your location history, track your movements, and analyze your travel patterns with complete privacy and control.", 
+      "logo": "https://dawarich.app/img/logo.svg",
+      "name": "dawarich",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/dawarich.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Dawarich",
+      "type": 3
+    },
     {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
