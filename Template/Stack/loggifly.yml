@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  loggifly:
+    image: ghcr.io/clemcer/loggifly:latest
+    container_name: loggifly
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Comment out the following if you are only using environment variables. 
+      # A config template will be downloaded in /config
+      # edit and rename it to config.yaml or create a new file with your config in it
+      - /portainer/Files/AppData/Config/loggifly/config.yaml:/config 
+    environment:
+      - TZ=Europe/Athens
+    restart: unless-stopped
