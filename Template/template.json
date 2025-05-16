@@ -4838,6 +4838,20 @@
       "title": "Dawarich",
       "type": 3
     },
+
+    {
+      "categories": ["Monitoring","Logs"],
+      "description": " A Lightweight Tool that monitors Docker Container Logs for predefined keywords or regex patterns and sends Notifications.", 
+      "logo": "https://github.com/clemcer/loggifly/raw/main/images/icon.png",
+      "name": "loggifly",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/loggifly.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Loggifly",
+      "type": 3
+    },
     {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
