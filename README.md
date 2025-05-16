@@ -43,6 +43,14 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>16/05/2025</summary>
+<br>
+ <ul>
+  <li>Loggifly</li>
+  </ul>
+</details>
+
+<details>
 <summary>12/05/2025</summary>
 <br>
  <ul>
