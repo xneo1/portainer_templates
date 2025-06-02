@@ -42,6 +42,16 @@ Go to [details page](details.md)
 ## App List
 ## Update:
 
+
+<details>
+<summary>02/06/2025</summary>
+<br>
+ <ul>
+  <li>Kestra</li>
+  </ul>
+</details>
+
+
 <details>
 <summary>16/05/2025</summary>
 <br>
