@@ -4865,6 +4865,19 @@
       "title": "Kestra",
       "type": 3
     },
+	   {
+      "categories": ["News"],
+      "description": "Marreta is a tool that breaks down access barriers and elements that hinder reading!", 
+      "logo": "",
+      "name": "Marreta",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/marreta.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Marreta",
+      "type": 3
+    },
     {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
