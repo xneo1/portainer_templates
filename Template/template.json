@@ -4878,6 +4878,19 @@
       "title": "Marreta",
       "type": 3
     },
+	  {
+      "categories": ["Social"],
+      "description": " An alternative to: Buffer.com, Hypefury, Twitter Hunter, etc...Postiz offers everything you need to manage your social media posts,build an audience, capture leads, and grow your business.", 
+      "logo": "https://docs.postiz.com/_next/image?url=%2Flogo%2Fdark.png&w=256&q=75",
+      "name": "Postiz",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/postiz.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Postiz",
+      "type": 3
+    },
     {
       "categories": ["Automation", "AI"],
       "description": "Automate your marketing, sales and operations", 
