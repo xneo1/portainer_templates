@@ -1,0 +1,11 @@
+services:
+  marreta:
+    container_name: marreta
+    image: ghcr.io/manualdousuario/marreta:latest
+    ports:
+      - "1180:80"
+    environment:
+      - SITE_NAME=
+      - SITE_DESCRIPTION=
+      - SITE_URL=
+      - LANGUAGE=
