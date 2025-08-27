@@ -4856,7 +4856,7 @@
       "categories": ["Automation","Orchestration"],
       "description": "Powerful orchestration. Simplified workflows.Unify orchestration for all engineers. Build and govern all your workflows — Everything-as-Code, and from the UI.", 
       "logo": "https://kestra.io/cdn-cgi/image/f=webp,w=236,h=123,q=80/landing/header-menu/download-logo.svg",
-      "name": "Kestra",
+      "name": "kestra",
       "platform": "linux",
       "repository": {
 	    "stackfile": "Template/Stack/kestra.yml",
@@ -4869,7 +4869,7 @@
       "categories": ["News"],
       "description": "Marreta is a tool that breaks down access barriers and elements that hinder reading!", 
       "logo": "",
-      "name": "Marreta",
+      "name": "marreta",
       "platform": "linux",
       "repository": {
 	    "stackfile": "Template/Stack/marreta.yml",
