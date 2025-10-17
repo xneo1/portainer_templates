@@ -1,0 +1,101 @@
+version: '3.4'
+name: netbox
+
+services:
+  netbox: &netbox
+    image: docker.io/netboxcommunity/netbox:${VERSION:-v4.2-3.2.0}
+    hostname: netbox
+    depends_on:
+      - postgres
+      - redis
+      - redis-cache
+    env_file:
+      - stack.env          # τα variables τα έχετε ήδη στο Portainer
+    user: "unit:root"
+    healthcheck:
+      test: curl -f http://localhost:8080/login/ || exit 1
+      start_period: 90s
+      timeout: 3s
+      interval: 15s
+    restart: unless-stopped
+    ports:                 # <-- άμεσο expose του Netbox
+      - "8008:8080"
+    volumes:
+      - /portainer/Files/AppData/Config/netbox/configuration:/etc/netbox/config:ro
+      - /portainer/Files/AppData/Config/netbox/media-files:/opt/netbox/netbox/media:rw
+      - /portainer/Files/AppData/Config/netbox/reports-files:/opt/netbox/netbox/reports:rw
+      - /portainer/Files/AppData/Config/netbox/scripts-files:/opt/netbox/netbox/scripts:rw
+
+  netbox-worker:
+    <<: *netbox
+    depends_on:
+      netbox:
+        condition: service_healthy
+    command:
+      - /opt/netbox/venv/bin/python
+      - /opt/netbox/netbox/manage.py
+      - rqworker
+    healthcheck:
+      test: ps -aux | grep -v grep | grep -q rqworker || exit 1
+      start_period: 20s
+      timeout: 3s
+      interval: 15s
+
+  netbox-housekeeping:
+    <<: *netbox
+    depends_on:
+      netbox:
+        condition: service_healthy
+    command:
+      - /opt/netbox/housekeeping.sh
+    healthcheck:
+      test: ps -aux | grep -v grep | grep -q housekeeping || exit 1
+      start_period: 20s
+      timeout: 3s
+      interval: 15s
+
+  postgres:
+    image: docker.io/postgres:17-alpine
+    environment:
+      POSTGRES_DB: netbox
+      POSTGRES_PASSWORD: J5brHrAXFLQSif0K
+      POSTGRES_USER: netbox
+    healthcheck:
+      test: pg_isready -q -t 2 -d $$POSTGRES_DB -U $$POSTGRES_USER
+      start_period: 20s
+      timeout: 30s
+      interval: 10s
+      retries: 5
+    restart: always
+    volumes:
+      - /portainer/Files/AppData/Config/netbox/postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: docker.io/valkey/valkey:8.0-alpine
+    command: >
+      sh -c 'valkey-server --appendonly yes --requirepass $$REDIS_PASSWORD'
+    environment:
+      REDIS_PASSWORD: H733Kdjndks81
+    healthcheck: &redis-healthcheck
+      test: '[ $$(valkey-cli --pass "$${REDIS_PASSWORD}" ping) = ''PONG'' ]'
+      start_period: 5s
+      timeout: 3s
+      interval: 1s
+      retries: 5
+    restart: always
+    volumes:
+      - /portainer/Files/AppData/Config/netbox/redis-data:/data
+
+  redis-cache:
+    image: docker.io/valkey/valkey:8.0-alpine
+    command: >
+      sh -c 'valkey-server --requirepass $$REDIS_PASSWORD'
+    environment:
+      REDIS_PASSWORD: t4Ph722qJ5QHeQ1qfu36
+    healthcheck: *redis-healthcheck
+    restart: always
+    volumes:
+      - netbox-redis-cache-data:/data
+
+volumes:
+  netbox-redis-cache-data:
