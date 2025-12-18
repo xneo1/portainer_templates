@@ -47,6 +47,7 @@ Go to [details page](details.md)
 <br>
  <ul>
   <li>DockerComposeMaker</li>
+  <li>Arcane</li>
   </ul>
 </details>
 
