@@ -3676,6 +3676,19 @@
       "title": "Monica",
       "type": 3
     }, 
+	 {
+      "categories": ["Tools"],
+      "description": "DCM (Docker Compose Maker) is a simple yet powerful tool that helps you create docker-compose.yaml files for your self-hosted applications.", 
+      "logo": "https://github.com/ajnart/dcm/raw/main/public/favicon.png",
+      "name": "dockercomposemaker",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/dockercomposemaker.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Docker Compose maker",
+      "type": 3
+    }, 
     {
       "categories": ["Network"],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
@@ -3687,7 +3700,7 @@
       "restart_policy": "always",
       "title": "Netbox",
       "type": 1
-    },
+    },	  
     {
       "categories": ["Dashboard", "IoT"],
       "description": "Freeboard is a turn-key HTML-based 'engine' for dashboards. Besides a nice looking layout engine, it provides a plugin architecture for creating datasources (which fetch data) and widgets (which display data)— freeboard then does all the work to connect the two together.",
