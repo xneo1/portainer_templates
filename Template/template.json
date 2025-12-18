@@ -3689,6 +3689,19 @@
       "title": "Docker Compose maker",
       "type": 3
     }, 
+	{
+      "categories": ["Tools"],
+      "description": "A beautiful, intuitive interface for managing your Docker containers, images, networks, and volumes. No terminal required.", 
+      "logo": "https://getarcane.app/_app/immutable/assets/logo-full.BlWsIU1M.svg",
+      "name": "arcane",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/arcane.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Arcane",
+      "type": 3
+    }, 
     {
       "categories": ["Network"],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
