@@ -1,0 +1,7 @@
+services:
+  dcm:
+    image: ghcr.io/ajnart/dcm
+    container_name: dcm
+    ports:
+      - "7576:7576"
+    restart: unless-stopped
