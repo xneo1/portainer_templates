@@ -43,6 +43,15 @@ Go to [details page](details.md)
 ## Update:
 
 <details>
+<summary>31/12/2025</summary>
+<br>
+ <ul>
+  <li>Lunalytics</li>
+  </ul>
+</details>
+
+
+<details>
 <summary>18/12/2025</summary>
 <br>
  <ul>
