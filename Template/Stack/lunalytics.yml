@@ -1,0 +1,10 @@
+# docker-compose.yml
+services:
+  lunalytics:
+    image: ksjaay/lunalytics:latest
+    container_name: lunalytics
+    ports:
+      - '2308:2308'
+    volumes:
+      - /portainer/Files/AppData/Config/lunalytics/data:/app/data
+      - /portainer/Files/AppData/Config/lunalytics/logs:/app/logs
