@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: priceghost
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - priceghost-postgres_data:/var/lib/postgresql/data
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     ports:
       - "5432:5432"
@@ -48,4 +48,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  postgres_data:
+  priceghost-postgres_data:
