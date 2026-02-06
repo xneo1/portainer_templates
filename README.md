@@ -47,6 +47,7 @@ Go to [details page](details.md)
 <br>
  <ul>
   <li>PriceGhost</li>
+  <li>GoCostWeb</li>li
   </ul>
 </details>
 
