@@ -3728,6 +3728,19 @@
       "title": "PriceGhost",
       "type": 3
     }, 
+	{
+      "categories": ["Personal Finance"],
+      "description": "Golang-based web application for personal expense management, focused on a clean monthly workflow and intuitive tracking of recurring and non-recurring costs.", 
+      "logo": "",
+      "name": "gocostweb",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/gocostweb.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "GoCostWeb",
+      "type": 3
+    }, 
     {
       "categories": ["Network"],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
