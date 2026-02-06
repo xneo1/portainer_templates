@@ -3715,7 +3715,19 @@
       "title": "Lunalytics",
       "type": 3
     }, 
-	  
+	    {
+      "categories": ["Shopping"],
+      "description": "A self-hosted price tracking application that monitors product prices from any website.Get notified when prices drop, hit your target price, or items come back in stock.", 
+      "logo": "https://github.com/clucraft/PriceGhost/raw/main/assets/header.svg",
+      "name": "priceghost",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/priceghost.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "PriceGhost",
+      "type": 3
+    }, 
     {
       "categories": ["Network"],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
