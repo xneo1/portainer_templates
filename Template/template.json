@@ -3741,6 +3741,19 @@
       "title": "GoCostWeb",
       "type": 3
     }, 
+	  	{
+      "categories": ["Productivity"],
+      "description": "An offline first, self hostable note taking application", 
+      "logo": "https://raw.githubusercontent.com/zhfahim/anchor/main/web/public/icons/anchor_icon.png",
+      "name": "anchor",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/anchor.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Anchor",
+      "type": 3
+    }, 
     {
       "categories": ["Network"],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
