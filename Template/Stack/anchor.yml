@@ -1,0 +1,19 @@
+services:
+  anchor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: anchor
+    container_name: anchor
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PG_USER=anchor
+      - PG_PASSWORD=password
+      - PG_DATABASE=anchor
+    volumes:
+      - anchor_data:/data
+
+volumes:
+  anchor_data:
