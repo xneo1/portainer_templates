@@ -1,0 +1,10 @@
+services:
+  filegator:
+    image: filegator/filegator:latest
+    container_name: filegator
+    ports:
+      - "8886:80"
+    volumes:
+      - /mnt/BAU:/srv/files:shared  # Bind your SMB mount
+      - /portainer/Files/AppData/Config/filegator/data:/config  # Persist config
+    restart: unless-stopped
