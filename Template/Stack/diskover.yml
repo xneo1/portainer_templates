@@ -1,3 +1,10 @@
+#PREREQUISITES
+#Run below commands BEFORE DEPLOYING
+#sudo chown -R 1000:1000 /portainer/Files/AppData/Config/diskover/es_data
+#sudo sysctl -w vm.max_map_count=262144
+#----------#
+#Run initial crawl after deploy with: python3 /app/diskover/diskover.py /data
+
 services:
   elasticsearch:
     image: elasticsearch:7.17.10
