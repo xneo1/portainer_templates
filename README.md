@@ -9,6 +9,9 @@
 
 | Date | Services Added |
 |------|----------------|
+| **05 Mar** | Diskover |
+| **05 Mar** | Filestash|
+| **05 Mar** | Filegator |
 | **13 Feb** | Crowdsec Web UI |
 | **09 Feb** | Solidtime, TRIP, Checkle, Lidify-FULL, Lidify, Aurral |
 | **06 Feb** | PriceGhost, GoCostWeb |
