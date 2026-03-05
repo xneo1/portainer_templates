@@ -4678,7 +4678,33 @@
       },  
       "title": "Filestash",
       "type": 3
-    }, 
+    },
+    {
+      "categories": ["Files"],
+      "description": "FileGator is a free, open-source, self-hosted web application for managing files and folders.", 
+      "logo": "https://filegator.io/filegator_logo.svg",
+      "name": "filegator",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/filegator.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Filegator",
+      "type": 3
+    },
+	{
+      "categories": ["Files"],
+      "description": "Open-source file indexer, search engine, data analytics and management platform powered by Elasticsearch.", 
+      "logo": "https://github.com/diskoverdata/diskover-docs/raw/main/source_files/images/diskover_logo_only.png",
+      "name": "diskover",
+      "platform": "linux",
+      "repository": {
+	 "stackfile": "Template/Stack/diskover.yml",
+	 "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Diskover",
+      "type": 3
+    },
     {
       "categories": ["CMS"],
       "description": "Silverstripe CMS is a free and open source Content Management System (CMS) and Framework for creating and maintaining websites and web applications.", 
