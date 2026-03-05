@@ -6,9 +6,6 @@
 
 # Portainer V2.5 Templates for Selfhosted Projects/Homelabs
 ## Latest Service Addition: 05/03/2026
-21/02/2023: Starting to replace everything to type 3 (stack).
-29/04/2024: Most Services are type 3
-
 This is a template focused on helping people spin up selfhosted services using Portainer, forked from [Qballjos](https://github.com/Qballjos/portainer_templates).
 
 ### Prerequisites
