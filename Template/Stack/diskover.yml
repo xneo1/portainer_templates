@@ -1,0 +1,38 @@
+services:
+  diskover-elasticsearch:
+    image: elasticsearch:7.17.10
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - /portainer/Files/AppData/Config/diskover/es_data:/usr/share/elasticsearch/data
+    networks:
+      - diskover_net
+
+  diskover:
+    image: linuxserver/diskover:latest
+    container_name: diskover
+    ports:
+      - "8885:80"
+    volumes:
+      - /mnt/MYSMBMOUNT:/data:ro
+      - /portainer/Files/AppData/Config/diskover/data:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
+      - ELASTICSEARCH_HOST=diskover-elasticsearch
+    depends_on:
+      - diskover-elasticsearch
+    networks:
+      - diskover_net
+    restart: unless-stopped
+
+networks:
+  diskover_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
