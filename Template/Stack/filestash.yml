@@ -1,19 +1,14 @@
 services:
   filestash:
     container_name: filestash
-    image: machines/filestash
-    restart: always
+    hostname: filestash
+    image: machines/filestash:latest
+    restart: unless-stopped
+    expose:
+      - 8334                                      # Web UI
     environment:
-    - APPLICATION_URL=
-    - GDRIVE_CLIENT_ID=<gdrive_client>
-    - GDRIVE_CLIENT_SECRET=<gdrive_secret>
-    - DROPBOX_CLIENT_ID=<dropbox_key>
-    - ONLYOFFICE_URL=http://onlyoffice
-    ports:
-    - "8334:8334"
-  onlyoffice:
-    container_name: filestash_oods
-    image: onlyoffice/documentserver
-    restart: always
-    security_opt:
-      - seccomp:unconfined
+      - APPLICATION_URL=MYHOSTIP  # Your host LAN IP
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /portainer/Files/AppData/Config/filestash/data:/app/data/state
+      - /mnt/MYSMBMOUNT:/mnt/MYSMBMOUNT:shared    # Your SMB mount
