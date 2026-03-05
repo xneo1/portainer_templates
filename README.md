@@ -5,6 +5,7 @@
 <a href="https://www.buymeacoffee.com/bol1JWG9V" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 # Portainer V2.5 Templates for Selfhosted Projects/Homelabs
+## Latest Service Addition: 05/03/2026
 21/02/2023: Starting to replace everything to type 3 (stack).
 29/04/2024: Most Services are type 3
 
@@ -39,8 +40,6 @@ Go to [details page](details.md)
 
 
 ## App List
-## Update:
-
 ## 📅 Changelog Timeline
 
 ### 🗓️ 2026
