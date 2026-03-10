@@ -43,6 +43,7 @@ Go to [details page](details.md)
 
 | Date | Services Added |
 |------|----------------|
+| **10 Mar** | Shadowbroker |
 | **05 Mar** | Filegator, Filestash, Diskover |
 | **13 Feb** | Crowdsec Web UI |
 | **09 Feb** | Solidtime, TRIP, Checkle, Lidify-FULL, Lidify, Aurral |
