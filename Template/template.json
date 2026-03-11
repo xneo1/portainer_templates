@@ -4692,6 +4692,19 @@
       "title": "Filegator",
       "type": 3
     },
+	   {
+      "categories": ["OSINT"],
+      "description": "Global Threat Intercept — Real-Time Geospatial Intelligence Platform", 
+      "logo": "https://avatars.githubusercontent.com/u/43977454?s=48&v=4",
+      "name": "shadowbroker",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/shadowbroker.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Shadowbroker",
+      "type": 3
+    },
 	{
       "categories": ["Files"],
       "description": "Open-source file indexer, search engine, data analytics and management platform powered by Elasticsearch.", 
