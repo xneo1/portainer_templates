@@ -43,6 +43,7 @@ Go to [details page](details.md)
 
 | Date | Services Added |
 |------|----------------|
+| **06 Apr** | Rackula |
 | **10 Mar** | Shadowbroker |
 | **05 Mar** | Filegator, Filestash, Diskover |
 | **13 Feb** | Crowdsec Web UI |
