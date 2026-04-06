@@ -2,9 +2,9 @@ services:
   rackula:
     image: ghcr.io/rackulalives/rackula:latest
     container_name: rackula
-    restart: unless-stopped
+    restart: always
     ports:
-      - "8080:8080"
+      - "8383:8080"
     environment:
       - API_HOST=rackula-api
       - API_PORT=3001
@@ -43,7 +43,7 @@ services:
   rackula-api:
     image: ghcr.io/rackulalives/rackula-api:latest
     container_name: rackula-api
-    restart: unless-stopped
+    restart: always
     stop_grace_period: 10s
     volumes:
       # Host directory must be writable by container user (uid 1001)
@@ -52,7 +52,7 @@ services:
     environment:
       - DATA_DIR=/data
       - RACKULA_API_PORT=3001
-      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost:8080}
+      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost:8383}
       - RACKULA_API_WRITE_TOKEN=${RACKULA_API_WRITE_TOKEN:-}
       - RACKULA_AUTH_MODE=${RACKULA_AUTH_MODE:-none}
       - RACKULA_AUTH_SESSION_SECRET=${RACKULA_AUTH_SESSION_SECRET:-}
