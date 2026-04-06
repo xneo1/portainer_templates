@@ -1,0 +1,93 @@
+services:
+  rackula:
+    image: ghcr.io/rackulalives/rackula:latest
+    container_name: rackula
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - API_HOST=rackula-api
+      - API_PORT=3001
+      - RACKULA_LISTEN_PORT=8080
+      - API_WRITE_TOKEN=${RACKULA_API_WRITE_TOKEN:-}
+      - RACKULA_AUTH_MODE=${RACKULA_AUTH_MODE:-none}
+      - RACKULA_ENABLE_IPV6=${RACKULA_ENABLE_IPV6:-auto}
+      - NGINX_RESOLVER=127.0.0.11
+    stop_grace_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 128M
+        reservations:
+          cpus: "0.10"
+          memory: 16M
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx:size=10M
+      - /var/run:size=1M
+      - /tmp:size=5M
+      - /etc/nginx/conf.d:size=1M,uid=101,gid=101
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      - rackula-api
+
+  rackula-api:
+    image: ghcr.io/rackulalives/rackula-api:latest
+    container_name: rackula-api
+    restart: unless-stopped
+    stop_grace_period: 10s
+    volumes:
+      # Host directory must be writable by container user (uid 1001)
+      # Run: mkdir -p /portainer/Files/AppData/Config/rackula/data && chown 1001:1001 /portainer/Files/AppData/Config/rackula/data
+      - /portainer/Files/AppData/Config/rackula/data:/data
+    environment:
+      - DATA_DIR=/data
+      - RACKULA_API_PORT=3001
+      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost:8080}
+      - RACKULA_API_WRITE_TOKEN=${RACKULA_API_WRITE_TOKEN:-}
+      - RACKULA_AUTH_MODE=${RACKULA_AUTH_MODE:-none}
+      - RACKULA_AUTH_SESSION_SECRET=${RACKULA_AUTH_SESSION_SECRET:-}
+      - RACKULA_AUTH_SESSION_MAX_AGE_SECONDS=${RACKULA_AUTH_SESSION_MAX_AGE_SECONDS:-43200}
+      - RACKULA_AUTH_SESSION_IDLE_TIMEOUT_SECONDS=${RACKULA_AUTH_SESSION_IDLE_TIMEOUT_SECONDS:-1800}
+      - RACKULA_AUTH_SESSION_GENERATION=${RACKULA_AUTH_SESSION_GENERATION:-0}
+      - RACKULA_AUTH_SESSION_COOKIE_SAMESITE=${RACKULA_AUTH_SESSION_COOKIE_SAMESITE:-Lax}
+      - RACKULA_AUTH_SESSION_COOKIE_SECURE=${RACKULA_AUTH_SESSION_COOKIE_SECURE:-true}
+      - RACKULA_AUTH_CSRF_PROTECTION=${RACKULA_AUTH_CSRF_PROTECTION:-true}
+      - ALLOW_INSECURE_CORS=${ALLOW_INSECURE_CORS:-false}
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 64M
+        reservations:
+          cpus: "0.05"
+          memory: 16M
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp:size=5M
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3001/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+    expose:
+      - "3001"
