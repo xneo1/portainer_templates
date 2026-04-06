@@ -4705,6 +4705,19 @@
       "title": "Shadowbroker",
       "type": 3
     },
+	  {
+      "categories": ["Network"],
+      "description": "Plan your rack layout. Drag your devices in, move them around, export it. It runs in your browser. You can close the tab whenever you want", 
+      "logo": "https://github.com/RackulaLives/Rackula/raw/main/assets/Rackula-lockup-dark.svg",
+      "name": "rackula",
+      "platform": "linux",
+      "repository": {
+	    "stackfile": "Template/Stack/rackula.yml",
+	    "url": "https://github.com/xneo1/portainer_templates"
+      },  
+      "title": "Rackula",
+      "type": 3
+    },
 	{
       "categories": ["Files"],
       "description": "Open-source file indexer, search engine, data analytics and management platform powered by Elasticsearch.", 
