@@ -22,11 +22,11 @@ services:
         reservations:
           cpus: "0.10"
           memory: 16M
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
-    read_only: true
+    #security_opt:
+    #  - no-new-privileges:true
+    #cap_drop:
+    #  - ALL
+    #read_only: true
     tmpfs:
       - /var/cache/nginx:size=10M
       - /var/run:size=1M
