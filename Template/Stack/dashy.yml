@@ -1,27 +1,17 @@
 services:
   dashy:
-    # To build from source, replace 'image: lissy93/dashy' with 'build: .'
-    # build: .
     image: lissy93/dashy
     container_name: Dashy
-    # Pass in your config file below, by specifying the path on your host machine
     volumes:
-       - /portainer/Files/AppData/Config/Dashy/conf.yml:/app/public/conf.yml
-       - /portainer/Files/AppData/Config/Dashy/icons:/app/public/item-icons
+      - /portainer/Files/AppData/Config/Dashy:/app/user-data
     ports:
-      - 4000:80
-    # Set any environmental variables
+      - ${PORT}:8080
     environment:
       - NODE_ENV=production
-    # Specify your user ID and group ID. You can find this by running `id -u` and `id -g`
-      - UID=1000
-      - GID=1000
-    # Specify restart policy
-    restart: always
-    # Configure healthchecks
+    restart: unless-stopped
     healthcheck:
-      test: ['CMD', 'node', '/app/services/healthcheck']
+      test: ['CMD', 'node', '/app/services/healthcheck.js']
       interval: 1m30s
       timeout: 10s
       retries: 3
-      start_period: 40s
+      start_period: 30s
