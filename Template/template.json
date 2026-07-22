@@ -1147,22 +1147,13 @@
       "description": "Helps you organize your self-hosted services by making them accessible from a single place.",
       "env": [
         {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "1000",
-          "label": "PGID",
-          "name": "PGID"
-        },
-        {
           "label": "PORT",
           "name": "PORT"
         }
       ],
       "logo": "https://dashy.to/img/dashy.png",
       "name": "Dashy",
+      "note": "Create the host config directory and set its owner to uid/gid 1000 (<b>sudo chown -R 1000:1000 /portainer/Files/AppData/Config/Dashy</b>), then add your conf.yml. The directory is mounted to /app/user-data.",
       "platform": "linux",
       "repository": {
         "stackfile": "Template/Stack/dashy.yml",
