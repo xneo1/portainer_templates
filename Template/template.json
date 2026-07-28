@@ -347,10 +347,10 @@
           "name": "PGID"
         }
       ],
-      "image": "linuxserver/calibre-web:latest",
+      "image": "lscr.io/linuxserver/calibre-web:latest",
       "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/calibre-web-icon.png",
       "name": "calibre-web",
-      "note": "Configuration <ul><li><b>/config</b> - Where Calibre-web should store it's database</li><li><b>/books</b> - Path to your calibre library metadata.db file</li></ul>",
+      "note": "Configuration <ul><li><b>/config</b> - Where Calibre-web should store it's database</li><li><b>/books</b> - Path to your Calibre library metadata.db file</li></ul>",
       "platform": "linux",
       "ports": ["8083:8083/tcp"],
       "restart_policy": "unless-stopped",
