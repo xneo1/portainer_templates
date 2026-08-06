@@ -5918,6 +5918,46 @@
           "container": "/config"
         }
       ]
+    },
+    {
+      "categories": ["Photos", "AI"],
+      "description": "Noodle Gallery is a self-hosted photo and video management application - an open-source alternative to Google Photos. A community fork of Immich adding Shared Spaces, a keyboard-first search palette, auto-classification, pet detection, video duplicate detection, in-browser image editing and video trimming, a guided Google Takeout import wizard, and native S3-compatible storage. Web UI on port 2283, with native iOS and Android apps.",
+      "env": [
+        {
+          "default": "/portainer/Files/AppData/Config/noodle-gallery/library",
+          "label": "UPLOAD_LOCATION",
+          "name": "UPLOAD_LOCATION"
+        },
+        {
+          "default": "/portainer/Files/AppData/Config/noodle-gallery/postgres",
+          "label": "DB_DATA_LOCATION",
+          "name": "DB_DATA_LOCATION"
+        },
+        {
+          "default": "postgres",
+          "label": "DB_PASSWORD",
+          "name": "DB_PASSWORD"
+        },
+        {
+          "default": "v5",
+          "label": "IMMICH_VERSION",
+          "name": "IMMICH_VERSION"
+        },
+        {
+          "default": "Etc/UTC",
+          "label": "TZ",
+          "name": "TZ"
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/open-noodle/gallery/main/design/gallery-logo-inline-light.png",
+      "name": "noodle-gallery",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/noodle-gallery.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Noodle Gallery",
+      "type": 3
     }
   ]
 }
